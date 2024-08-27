@@ -14,7 +14,16 @@ const underlineAnimation = {
   }
 }
 
-function ElementNav({ icon, title }) {
+const appearAnimation = {
+  hidden: {
+    y: "-200%"
+  },
+  visible: {
+    y: 0
+  },
+}
+
+const ElementNav = React.forwardRef(({ icon, title }, ref) => {
   const controls = useAnimationControls();
 
   const handleMouseEnter = () => {
@@ -26,12 +35,14 @@ function ElementNav({ icon, title }) {
   };
 
   return (
-    <li
-      className="flex flex-col cursor-pointer"
+    <motion.li
+      className="flex flex-col cursor-pointer justify-items-center"
+      variants={appearAnimation}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      ref={ref}
     >
-      <a className="flex items-baseline gap-1" href="">
+      <a className="flex items-baseline gap-1 my-auto" href="">
         <FontAwesomeIcon icon={icon} />
         <p>{title}</p>
       </a>
@@ -42,8 +53,8 @@ function ElementNav({ icon, title }) {
         exit={controls}
         className="h-1.5 min-h-1.5 bg-purple-500 rounded-lg"
       ></motion.div>
-    </li>
+    </motion.li>
   );
-}
+});
 
 export default ElementNav;
