@@ -51,7 +51,7 @@ const ElementNav = React.forwardRef(({ icon, title }, ref) => {
         initial="hidden"
         animate={controls}
         exit={controls}
-        className="h-1.5 min-h-1.5 bg-purple-500 rounded-lg"
+        className="h-1.5 min-h-1.5 bg-fuchsia-500 rounded-lg"
       ></motion.div>
     </motion.li>
   );

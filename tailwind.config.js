@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         dosis: ["dosis", "sans-serif"],
       },
+      borderRadius: {
+        'custom': '0 0 50% 50% / 0 0 100% 100%'
+      },
     },
   },
   plugins: [],

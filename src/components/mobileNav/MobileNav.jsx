@@ -12,7 +12,7 @@ function MobileNav() {
   console.log(isOpen);
 
   return (
-    <nav className="md:hidden h-20 bg-purple-950/70 px-10 py-2 relative backdrop-blur-sm flex items-center z-50">
+    <nav className="md:hidden h-20 bg-purple-950/70 px-10 py-2 sticky top-0 backdrop-blur-sm flex items-center z-50">
       <motion.a
         whileHover={{ rotate: 3 }}
         href=""
@@ -45,7 +45,7 @@ function MobileNav() {
             initial={{ scale: 0, transformOrigin: "top right" }}
             animate={{ scale: 1, transformOrigin: "top right" }}
             exit={{ scale: 0, transformOrigin: "top right" }}
-            className="w-screen bg-purple-950/70 absolute left-0 h-[60vh] top-20 p-6 text-white flex flex-col items-center justify-evenly"
+            className="w-full bg-purple-950/70 absolute left-0 h-[60vh] top-20 p-6 text-white flex flex-col items-center justify-evenly"
           >
             {navElements.map((item, index) => (
               <a className="text-3xl flex gap-2" key={item?.title} href="">

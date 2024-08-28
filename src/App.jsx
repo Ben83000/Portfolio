@@ -10,16 +10,12 @@ function App() {
   return (
     <section className="relative font-dosis flex flex-col w-full h-full">
       <ParticlesBackground />
-      <Background />
       <Nav />
       <MobileNav />
-      <header className="w-full h-screen bg-white/10">
-        <Home />
-      </header>
-      <main className="h-screen w-full">
+      <Home />
+      <main className="w-full">
         <About />
       </main>
-      <div className="h-96"></div>
     </section>
   );
 }

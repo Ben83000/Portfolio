@@ -8,9 +8,9 @@ import {
 
 const navElements = [
   { title: "Accueil", icon: faHome },
-  { title: "À propos", icon: faUser },
   { title: "Projets", icon: faLaptopCode },
   { title: "Compétences", icon: faAtom },
+  { title: "À propos", icon: faUser },
   { title: "Contact", icon: faEnvelope },
 ];
 
