@@ -100,7 +100,7 @@ function About() {
       animate={ textInView ? { opacity: 1 } : { opacity: 0}}
       transition={{ duration: 1 }}
        className="col-span-2 flex flex-col text-white text-3xl gap-4 px-10 justify-center text-center">
-        <p className="mb-10">Une petite présentation ?</p>
+        <p className="mb-10 text-4xl">Une petite présentation ?</p>
         <p>
           Comme écrit plus haut, je suis{" "}
           <span className="text-fuchsia-500 font-semibold">
