@@ -1,53 +1,231 @@
+@import url("https://fonts.cdnfonts.com/css/ica-rubrik-black");
+@import url("https://fonts.cdnfonts.com/css/poppins");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    :root {
-      --background: 244 27% 12%;
-      --foreground: 244 16% 82%;
-      --muted: 244 12% 16%;
-      --muted-foreground: 244 12% 66%;
-      --popover: 244 27% 9%;
-      --popover-foreground: 244 16% 92%;
-      --card: 244 27% 10%;
-      --card-foreground: 244 16% 87%;
-      --border: 244 17% 17%;
-      --input: 244 17% 20%;
-      --primary: 270 84% 66%;
-      --primary-foreground: 0 0% 0%;
-      --secondary: 270 30% 25%;
-      --secondary-foreground: 270 30% 85%;
-      --accent: 244 27% 27%;
-      --accent-foreground: 244 27% 87%;
-      --destructive: 3 92% 60%;
-      --destructive-foreground: 0 0% 100%;
-      --ring: 270 84% 66%;
-      --radius: 0.5rem;
-    }
-  
-    .dark {
-      --background: 244 27% 12%;
-      --foreground: 244 16% 82%;
-      --muted: 244 12% 16%;
-      --muted-foreground: 244 12% 66%;
-      --popover: 244 27% 9%;
-      --popover-foreground: 244 16% 92%;
-      --card: 244 27% 10%;
-      --card-foreground: 244 16% 87%;
-      --border: 244 17% 17%;
-      --input: 244 17% 20%;
-      --primary: 270 84% 66%;
-      --primary-foreground: 0 0% 0%;
-      --secondary: 270 30% 25%;
-      --secondary-foreground: 270 30% 85%;
-      --accent: 244 27% 27%;
-      --accent-foreground: 244 27% 87%;
-      --destructive: 3 92% 60%;
-      --destructive-foreground: 0 0% 100%;
-      --ring: 270 84% 66%;
-    }
+  :root {
+    --background: 244 27% 12%;
+    --foreground: 244 16% 82%;
+    --muted: 244 12% 16%;
+    --muted-foreground: 244 12% 66%;
+    --popover: 244 27% 9%;
+    --popover-foreground: 244 16% 92%;
+    --card: 244 27% 10%;
+    --card-foreground: 244 16% 87%;
+    --border: 244 17% 17%;
+    --input: 244 17% 20%;
+    --primary: 270 84% 66%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 270 30% 25%;
+    --secondary-foreground: 270 30% 85%;
+    --accent: 244 27% 27%;
+    --accent-foreground: 244 27% 87%;
+    --destructive: 3 92% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 270 84% 66%;
+    --radius: 0.5rem;
   }
 
-  
-  
+  .dark {
+    --background: 244 27% 12%;
+    --foreground: 244 16% 82%;
+    --muted: 244 12% 16%;
+    --muted-foreground: 244 12% 66%;
+    --popover: 244 27% 9%;
+    --popover-foreground: 244 16% 92%;
+    --card: 244 27% 10%;
+    --card-foreground: 244 16% 87%;
+    --border: 244 17% 17%;
+    --input: 244 17% 20%;
+    --primary: 270 84% 66%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 270 30% 25%;
+    --secondary-foreground: 270 30% 85%;
+    --accent: 244 27% 27%;
+    --accent-foreground: 244 27% 87%;
+    --destructive: 3 92% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 270 84% 66%;
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+.banner .slider {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 16%;
+  left: calc(50% - 100px);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+  animation: autoRun 20s linear infinite;
+  z-index: 2;
+}
+@keyframes autoRun {
+  from {
+    transform: perspective(1000px) rotateX(-18deg) rotateY(0deg);
+  }
+  to {
+    transform: perspective(1000px) rotateX(-18deg) rotateY(360deg);
+  }
+}
+
+.banner .slider .item {
+  position: absolute;
+  inset: 0 0 0 0;
+  transform: rotateY(
+      calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+    )
+    translateZ(430px);
+}
+ 
+
+.banner .slider .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.banner .content {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1400px, 90vw);
+  color: white;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  z-index: 1;
+}
+.banner .content h1 {
+  font-family: "ICA Rubrik";
+  font-size: 9em;
+  line-height: 1em;
+  color: #701a75;
+  position: relative;
+}
+.banner .content h1::after {
+  position: absolute;
+  inset: 0 0 0 0;
+  content: attr(data-content);
+  z-index: 2;
+  -webkit-text-stroke: 2px #f0abfc;
+  color: transparent;
+}
+.banner .content .model {
+  background-image: url(src/assets/me/studying.png);
+  width: 100%;
+  height: 75vh;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+  .banner .slider {
+    width: 150px;
+    height: 150px;
+    left: calc(50% - 80px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(300px);
+  }
+  .banner .content h1 {
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 10px 20px #000;
+    font-size: 7em;
+  }
+}
+@media screen and (max-width: 767px) {
+  .banner .slider {
+    width: 130px;
+    height: 130px;
+    left: calc(50% - 50px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(250px);
+  }
+  .banner .content h1 {
+    font-size: 5em;
+  }
+}
+@media screen and (max-width: 639px) {
+  .banner .slider {
+    width: 100px;
+    height: 100px;
+    left: calc(50% - 50px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(200px);
+  }
+  .banner .content h1 {
+    font-size: 4em;
+    bottom: 50px;
+  }
+  .banner .content .model {
+    background-image: url(src/assets/me/studying.png);
+    width: 100%;
+    height: 70vh;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 469px) {
+  .banner .slider {
+    width: 70px;
+    height: 70px;
+    left: calc(50% - 50px);
+  }
+  .banner .slider .item {
+    transform: rotateY(
+        calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
+      )
+      translateZ(140px);
+  }
+  .banner .content h1 {
+    font-size: 3em;
+    bottom: 200px;
+  }
+  .banner .content .model {
+    background-image: url(src/assets/me/studying.png);
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+  }
+}

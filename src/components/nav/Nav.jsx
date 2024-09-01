@@ -32,7 +32,7 @@ function Nav() {
           : { backgroundColor: "rgba(0, 0, 0, 0)" }
       }
       transition={{ duration: 0.5 }}
-      className="hidden h-20 md:flex text-white items-center md:px-10 lg:px-20 xl:px-32 sticky top-0 select-none z-50"
+      className="hidden h-16 md:flex text-white items-center md:px-10 lg:px-20 xl:px-32 sticky top-0 select-none z-50"
     >
       <motion.a
         whileHover={{ rotate: 3 }}
