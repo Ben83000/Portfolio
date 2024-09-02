@@ -202,18 +202,18 @@
 }
 @media screen and (max-width: 469px) {
   .banner .slider {
-    width: 70px;
-    height: 70px;
-    left: calc(50% - 50px);
+    width: 60px;
+    height: 60px;
+    left: calc(50% - 40px);
   }
   .banner .slider .item {
     transform: rotateY(
         calc((var(--position) - 1) * (360 / var(--quantity)) * 1deg)
       )
-      translateZ(140px);
+      translateZ(120px);
   }
   .banner .content h1 {
-    font-size: 3em;
+    font-size: 2.7em;
     bottom: 200px;
   }
   .banner .content .model {

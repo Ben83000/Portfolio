@@ -9,19 +9,19 @@ import { ModalContextProvider } from "./contexts/modalContext";
 import Modal from "./components/modal/Modal";
 import { ScreenContextProvider } from "./contexts/screenContext";
 import Skills from "./components/skills/Skills";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
     <ModalContextProvider>
       <ScreenContextProvider>
         <Modal />
-        <section className="relative font-dosis flex flex-col w-full h-full">
+        <section className="relative font-dosis flex flex-col w-full h-full gap-10">
           <ParticlesBackground />
+          <Nav />
+          <MobileNav />
           <header>
-            <Nav />
-            <MobileNav />
             <Home />
-            
           </header>
 
           <main className="flex flex-col gap-10">
@@ -29,6 +29,9 @@ function App() {
             <Skills />
             <About />
           </main>
+          <footer>
+            <Footer />
+          </footer>
         </section>
       </ScreenContextProvider>
     </ModalContextProvider>

@@ -33,7 +33,7 @@ function Skills() {
           </motion.div>
         ))}
       </motion.div>
-      <div class="content">
+      <div className="content">
         <h1 data-content="COMPÉTENCES" className="mx-auto">COMPÉTENCES</h1>
         <motion.div
           animate={{
