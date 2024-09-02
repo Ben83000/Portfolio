@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import Project from "./Project";
 import myProjects from "./myProjects";
+import { Element } from "react-scroll";
 
 function Projects() {
 
   return (
-    <section className="text-white text-4xl px-10 flex flex-col item-center justify-center text-center gap-10">
+    <Element name="projects" className="text-white text-4xl px-10 flex flex-col item-center justify-center text-center gap-10">
       <p>Mes projets</p>
       <div className="flex flex-col gap-6">
         {myProjects.map((item, index) =>
@@ -25,7 +26,7 @@ function Projects() {
           
         )}
       </div>
-    </section>
+    </Element>
   );
 }
 

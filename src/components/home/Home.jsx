@@ -1,6 +1,7 @@
 import React from "react";
 import flying from "../../assets/me/flying.png";
 import { motion } from "framer-motion";
+import { Element } from "react-scroll";
 
 function Home() {
   const letterAnimation = {
@@ -16,7 +17,7 @@ function Home() {
   };
 
   return (
-    <header className="min-h-[calc(100vh-64px)] w-full grid md:grid-cols-3 gap-4 px-10 py-10 md:py-20 text-white">
+    <Element name="home" className="min-h-[calc(100vh-64px)] w-full grid md:grid-cols-3 gap-4 px-10 py-10 md:py-20 text-white">
       <motion.div
         className="md:col-span-2 flex flex-col text-3xl sm:text-4xl lg:px-20 gap-8"
         initial="hidden"
@@ -78,7 +79,7 @@ function Home() {
           alt="alien flying"
         />
       </motion.div>
-    </header>
+    </Element>
   );
 }
 

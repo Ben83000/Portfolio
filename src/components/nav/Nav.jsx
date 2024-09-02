@@ -6,6 +6,7 @@ import cn from "classnames";
 
 function Nav() {
   const [isTop, setIsTop] = useState(true);
+  const [selectedMenuItem, setSelectedMenuItem] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +52,14 @@ function Nav() {
         className="flex h-full items-center gap-4 md:gap-6 lg:gap-14 xl:gap-20 text-xl ml-auto"
       >
         {navElements.map((item, index) => (
-          <ElementNav key={item?.title} title={item?.title} icon={item?.icon} />
+          <ElementNav
+            key={item?.title}
+            title={item?.title}
+            icon={item?.icon}
+            id={item?.id}
+            selectedMenuItem={selectedMenuItem}
+            setSelectedMenuItem={setSelectedMenuItem}
+          />
         ))}
       </motion.ul>
     </motion.nav>
