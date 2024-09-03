@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import navElements from "../nav/navElements";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-scroll";
 
 function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,10 @@ function MobileNav() {
   const handleClick = () => {
     setIsOpen(!isOpen);
   };
-  console.log(isOpen);
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav className="md:hidden h-16 bg-purple-950/70 px-10 py-2 sticky top-0 backdrop-blur-sm flex items-center z-50">
@@ -48,10 +52,19 @@ function MobileNav() {
             className="w-full bg-purple-950/70 absolute left-0 h-[60vh] top-16 p-6 text-white flex flex-col items-center justify-evenly"
           >
             {navElements.map((item, index) => (
-              <a className="text-3xl flex gap-2" key={item?.title} href="">
+              <Link
+                onClick={() => handleLinkClick(item?.id)}
+                to={item?.id}
+                smooth={true}
+                duration={500}
+                offset={-150}
+                className="text-3xl flex gap-2"
+                key={item?.title}
+                href=""
+              >
                 <FontAwesomeIcon className="" icon={item?.icon} />
-                <p className="">{item?.title}</p>
-              </a>
+                <p>{item?.title}</p>
+              </Link>
             ))}
           </motion.div>
         )}

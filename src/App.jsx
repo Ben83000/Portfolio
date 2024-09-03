@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ParticlesBackground from "./components/particles/ParticlesBackground";
 import Nav from "./components/nav/Nav";
 import MobileNav from "./components/mobileNav/MobileNav";
@@ -21,6 +20,7 @@ function App() {
           <ParticlesBackground />
           <Nav />
           <MobileNav />
+
           <header>
             <Home />
           </header>
@@ -31,9 +31,11 @@ function App() {
             <About />
             <Fun />
           </main>
+
           <footer>
             <Footer />
           </footer>
+
         </section>
       </ScreenContextProvider>
     </ModalContextProvider>

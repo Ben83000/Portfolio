@@ -32,7 +32,7 @@ function Footer() {
   };
 
   return (
-    <motion.section className="relative backdrop-blur-sm p-4 h-36 sm:px-10 w-full flex flex-col justify-end overflow-x-clip border-t-2 border-fuchsia-400 bg-fuchsia-400/10">
+    <motion.section className="relative backdrop-blur-sm p-4 sm:px-10 w-full flex flex-col justify-end overflow-x-clip border-t-2 border-fuchsia-400 bg-fuchsia-400/10">
       <motion.div
         animate={{ x: [-80, width], rotateX: 180 }}
         transition={{
@@ -48,7 +48,7 @@ function Footer() {
           <a href="https://www.linkedin.com/in/benjamin-boufflers-8bb688324/">
             <FontAwesomeIcon size="2x" icon={faLinkedin} />
           </a>
-          <a href="https://github.com/Ben83000/SugBreak">
+          <a href="https://github.com/Benjaminboufflers/SugBreak">
             <FontAwesomeIcon size="2x" icon={faGithub} />
           </a>
           <a

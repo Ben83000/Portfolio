@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {  useRef } from "react";
 import coding from "../../assets/me/coding.png";
 import { motion, useInView } from "framer-motion";
 import smoke from "../../assets/me/smoke.png";
@@ -9,10 +9,6 @@ function About() {
   const textRef = useRef();
   const imageInView = useInView(imageRef, { amount: 0.3, once: true });
   const textInView = useInView(textRef, { amount: 0.3, once: true });
-
-  useEffect(() => {
-    console.log(imageInView);
-  }, [imageInView]);
 
   return (
     <Element name="about">

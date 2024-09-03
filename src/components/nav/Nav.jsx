@@ -35,15 +35,14 @@ function Nav() {
       transition={{ duration: 0.5 }}
       className="hidden h-16 md:flex text-white items-center md:px-10 lg:px-20 xl:px-32 sticky top-0 select-none z-50"
     >
-      <motion.a
+      <motion.p
         whileHover={{ rotate: 3 }}
         initial={{ y: "-200%" }}
         animate={{ y: 0, transition: { duration: 1 } }}
-        href=""
         className="text-fuchsia-100 text-3xl font-semibold relative"
       >
         &lt;Ben /&gt;
-      </motion.a>
+      </motion.p>
 
       <motion.ul
         initial="hidden"

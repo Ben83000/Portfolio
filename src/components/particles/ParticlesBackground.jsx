@@ -15,16 +15,11 @@ const ParticlesBackground = () => {
         });
     }, []);
 
-    const particlesLoaded = (container) => {
-        console.log(container);
-    };
-
     return (
         init && 
         <>
         <Particles
             id="tsparticles"
-            particlesLoaded={particlesLoaded}
             options={particlesConfig}
             className="absolute top-0 left-0 w-full h-full -z-50"
         />

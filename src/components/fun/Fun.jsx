@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { motion, useAnimationControls, useInView } from "framer-motion";
 import up from "../../assets/me/up.png";
 import fire from "../../assets/me/fire.png";
-import rocketSmoke from "../../assets/me/rocketSmoke.png"
 import landscape from "../../assets/me/landscape.png";
 import { Link } from "react-scroll";
 
@@ -32,8 +31,7 @@ function Fun() {
         transition={{ duration: 1 }}
         src={landscape}
         ref={landscapeRef}
-        alt=""
-        className=""
+        alt="landscape"
       />
       <Link duration={1200} smooth="true" to="home" offset={-150}>
         <motion.div
@@ -42,7 +40,7 @@ function Fun() {
           custom={0}
           transition={{ duration: 1.3, ease: "easeInOut" }}
           onClick={handleClick}
-          className="absolute z-10 w-[40%] flex justify-center items-center"
+          className="absolute z-10 w-[40%] flex justify-center items-center cursor-pointer"
         >
           <motion.div
             animate={{ y: [0, 30, 0] }}

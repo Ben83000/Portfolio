@@ -1,4 +1,4 @@
-import { faAngleDoubleRight, faAngleRight, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";

@@ -31,7 +31,7 @@ function Skills() {
               key={index}
               style={{ "--position": index }}
             >
-              <img src={item} alt="" className="" />
+              <img src={item} alt="skill" />
             </motion.div>
           ))}
         </motion.div>

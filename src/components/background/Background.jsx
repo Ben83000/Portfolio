@@ -16,7 +16,7 @@ function Background() {
         }}
         src={planet}
         className=""
-        alt=""
+        alt="planet"
       />
       <motion.div
         initial={{ scale: 0, opacity: 0.4, x: -350, y: 500 }}
@@ -26,7 +26,7 @@ function Background() {
       >
         <motion.img
           src={astronaut1}
-          alt=""
+          alt="astronaut"
           animate={{
             x: [
               1, 3, 5, 7, 9, 7, 5, 3, 1, -1, -3, -5, -7, -9, -7, -5, -3, -1, 1,
@@ -41,7 +41,6 @@ function Background() {
           }}
         />
       </motion.div>
-      
     </div>
   );
 }
