@@ -10,6 +10,7 @@ import Modal from "./components/modal/Modal";
 import { ScreenContextProvider } from "./contexts/screenContext";
 import Skills from "./components/skills/Skills";
 import Footer from "./components/footer/Footer";
+import Fun from "./components/fun/Fun";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Projects />
             <Skills />
             <About />
+            <Fun />
           </main>
           <footer>
             <Footer />

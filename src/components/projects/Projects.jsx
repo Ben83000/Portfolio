@@ -6,7 +6,7 @@ import { Element } from "react-scroll";
 function Projects() {
 
   return (
-    <Element name="projects" className="text-white text-4xl px-10 flex flex-col item-center justify-center text-center gap-10">
+    <Element name="projects" className="text-white z-20 text-4xl px-10 flex flex-col item-center justify-center text-center gap-10">
       <p>Mes projets</p>
       <div className="flex flex-col gap-6">
         {myProjects.map((item, index) =>

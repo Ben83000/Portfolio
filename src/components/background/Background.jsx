@@ -1,13 +1,7 @@
 import React from "react";
 import planet from "../../assets/me/planet.png";
-import planet1 from "../../assets/me/planet1.png";
-import asteroid from "../../assets/me/asteroid.png";
-import asteroid1 from "../../assets/me/asteroid1.png";
-import asteroid2 from "../../assets/me/asteroid2.png";
-import astronaut from "../../assets/me/astronaut.png";
 import astronaut1 from "../../assets/me/astronaut1.png";
-import sun from "../../assets/me/sun.png";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Background() {
   return (
@@ -34,7 +28,9 @@ function Background() {
           src={astronaut1}
           alt=""
           animate={{
-             x: [1, 3, 5, 7, 9, 7, 5, 3, 1, -1, -3, -5, -7, -9, -7, -5, -3, -1, 1 ],
+            x: [
+              1, 3, 5, 7, 9, 7, 5, 3, 1, -1, -3, -5, -7, -9, -7, -5, -3, -1, 1,
+            ],
             scale: [0.9, 1, 0.9],
           }}
           transition={{
@@ -45,6 +41,7 @@ function Background() {
           }}
         />
       </motion.div>
+      
     </div>
   );
 }

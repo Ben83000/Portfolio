@@ -32,7 +32,7 @@ function Footer() {
   };
 
   return (
-    <motion.section className="relative p-4 sm:px-10 w-full flex flex-col justify-center overflow-x-clip border-t-2 border-fuchsia-400 bg-fuchsia-400/10">
+    <motion.section className="relative backdrop-blur-sm p-4 h-36 sm:px-10 w-full flex flex-col justify-end overflow-x-clip border-t-2 border-fuchsia-400 bg-fuchsia-400/10">
       <motion.div
         animate={{ x: [-80, width], rotateX: 180 }}
         transition={{

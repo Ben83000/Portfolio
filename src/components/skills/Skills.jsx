@@ -22,7 +22,7 @@ function Skills() {
         initial={{ scale: 0 }}
         whileInView={{ scale: 1, transition: { duration: 1 } }}
         viewport={{ once: true }}
-        className="banner"
+        className="banner z-20"
       >
         <motion.div className="slider" style={{ "--quantity": images.length }}>
           {images.map((item, index) => (

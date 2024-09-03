@@ -23,7 +23,7 @@ function About() {
             imageInView ? { scale: 1, opacity: 1 } : { opacity: 0, scale: 0 }
           }
           transition={{ duration: 1 }}
-          className="flex items-center justify-center relative col-span-1 max-md:row-start-2 max-md:h-96 w-fit mx-auto"
+          className="flex items-center justify-center relative col-span-1 max-md:row-start-2 max-md:h-2/3 w-fit mx-auto z-20"
         >
           <motion.img
             src={coding}
@@ -107,7 +107,7 @@ function About() {
           ref={textRef}
           animate={textInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 1 }}
-          className="col-span-2 flex flex-col text-white text-2xl gap-4 text-center"
+          className="col-span-2 flex flex-col text-white text-2xl gap-4 text-center z-20"
         >
           <p className="mb-10 text-4xl">Une petite présentation</p>
           <p>

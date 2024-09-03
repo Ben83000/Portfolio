@@ -46,7 +46,7 @@ const ElementNav = React.forwardRef(
         variants={appearAnimation}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        animate={selectedMenuItem === id ? { color: "rgb(240, 171, 252)", scale: 1.1} : {color: "rgb(255, 255, 255)", scale: 1}}
+        animate={selectedMenuItem === id ? { color: "rgb(240, 171, 252)", scale: 1.2} : {color: "rgb(255, 255, 255)", scale: 1}}
         ref={ref}
       >
         <Link
