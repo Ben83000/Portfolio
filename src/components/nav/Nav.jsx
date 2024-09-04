@@ -2,25 +2,13 @@ import React, { useEffect, useState } from "react";
 import ElementNav from "./ElementNav";
 import { motion } from "framer-motion";
 import navElements from "./navElements";
-import cn from "classnames";
+import Toggle from "../ui/Toggle";
+import { useScroll } from "@/contexts/scrollContext";
+
 
 function Nav() {
-  const [isTop, setIsTop] = useState(true);
+  const { isTop } = useScroll()
   const [selectedMenuItem, setSelectedMenuItem] = useState("home");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY === 0) {
-        setIsTop(true);
-      } else {
-        setIsTop(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <motion.nav
@@ -60,6 +48,7 @@ function Nav() {
             setSelectedMenuItem={setSelectedMenuItem}
           />
         ))}
+        <Toggle />
       </motion.ul>
     </motion.nav>
   );

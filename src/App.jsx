@@ -10,35 +10,40 @@ import { ScreenContextProvider } from "./contexts/screenContext";
 import Skills from "./components/skills/Skills";
 import Footer from "./components/footer/Footer";
 import Fun from "./components/fun/Fun";
+import { LanguageContextProvider } from "./contexts/languageContext";
+import { ScrollContextProvider } from "./contexts/scrollContext";
 
 function App() {
   return (
-    <ModalContextProvider>
-      <ScreenContextProvider>
-        <Modal />
-        <section className="relative font-dosis flex flex-col w-full h-full gap-10">
-          <ParticlesBackground />
-          <Nav />
-          <MobileNav />
+    <ScrollContextProvider>
+      <LanguageContextProvider>
+        <ModalContextProvider>
+          <ScreenContextProvider>
+            <Modal />
+            <section className="relative font-dosis flex flex-col w-full h-full gap-10">
+              <ParticlesBackground />
+              <Nav />
+              <MobileNav />
 
-          <header>
-            <Home />
-          </header>
+              <header>
+                <Home />
+              </header>
 
-          <main className="flex flex-col gap-10">
-            <Projects />
-            <Skills />
-            <About />
-            <Fun />
-          </main>
+              <main className="flex flex-col gap-10">
+                <Projects />
+                <Skills />
+                <About />
+                <Fun />
+              </main>
 
-          <footer>
-            <Footer />
-          </footer>
-
-        </section>
-      </ScreenContextProvider>
-    </ModalContextProvider>
+              <footer>
+                <Footer />
+              </footer>
+            </section>
+          </ScreenContextProvider>
+        </ModalContextProvider>
+      </LanguageContextProvider>
+    </ScrollContextProvider>
   );
 }
 

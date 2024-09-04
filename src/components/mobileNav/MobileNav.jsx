@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import navElements from "../nav/navElements";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-scroll";
+import Toggle from "../ui/Toggle";
+import { useScroll } from "@/contexts/scrollContext";
 
 function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isScrollingDown } = useScroll();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -16,14 +19,38 @@ function MobileNav() {
   };
 
   return (
-    <nav className="md:hidden h-16 bg-purple-950/70 px-10 py-2 sticky top-0 backdrop-blur-sm flex items-center z-50">
+    <nav className="md:hidden h-16 bg-purple-950/70 p-2 sticky top-0 backdrop-blur-sm flex gap-2 items-center z-50">
       <motion.a
         whileHover={{ rotate: 3 }}
         href=""
-        className="text-purple-400 text-3xl font-semibold overflow-hidden text-clip"
+        className="text-purple-400 text-2xl font-semibold"
       >
         &lt;Ben /&gt;
       </motion.a>
+      <AnimatePresence mode="popLayout">
+        {!isScrollingDown && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1}}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeInOut"}}
+          >
+            <motion.div
+              animate={{ y: [0, 10, -10, 0] }}
+              transition={{
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+                duration: 4,
+              }}
+              className="fixed top-20 bg-fuchsia-400 rounded-full right-2"
+            >
+              <Toggle />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.div
         onClick={handleClick}
         animate={isOpen ? { rotateZ: 180 } : { rotateZ: 0 }}

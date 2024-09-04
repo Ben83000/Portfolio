@@ -11,16 +11,29 @@ function Fun() {
   const landscapeInView = useInView(landscapeRef, { amount: 0.3, once: true });
 
   const handleClick = async () => {
-    await controls.start((i) => ({
-      bottom: i === 0 && "85%",
-      scale: i === 1 && [1.2, 1.5, 1.3, 1.5, 1.3, 1.4, 1.2, 1.5, 1.2],
-      transition: { duration: 1.3, ease: "easeInOut"}
-    }));
-    controls.start((i) => ({
-      bottom: i === 0 && "6%",
-      scale: i === 1 && 1,
-      transition: { duration: 1.4, ease: "easeInOut" },
-    }));
+    await controls.start((i) => {
+      if (i === 0) {
+        return {
+          bottom: "85%",
+          transition: { duration: 1.3, ease: "easeInOut" },
+        };
+      } else if (i === 1) {
+        return {
+          scale: [1.2, 1.5, 1.3, 1.6, 1.3, 1.4, 1.3, 1.5, 1.2],
+          transition: { duration: 1.3, ease: "easeInOut" },
+        };
+      }
+    });
+    controls.start((i) => {
+      if (i === 0) {
+        return {
+          bottom: "6%",
+          transition: { duration: 1.4, ease: "easeInOut" },
+        };
+      } else if (i === 1) {
+        return { scale: 1, transition: { duration: 1.4, ease: "easeInOut" } };
+      }
+    });
   };
 
   return (
@@ -53,7 +66,7 @@ function Fun() {
             className="relative"
           >
             <motion.img src={up} alt="rocket" className="" />
-            
+
             <motion.img
               src={fire}
               animate={controls}
