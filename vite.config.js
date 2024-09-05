@@ -4,8 +4,12 @@ import path from "path"
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    host: '0.0.0.0', // Permet d'écouter sur toutes les interfaces réseau
+    port: 5173, // Vous pouvez spécifier un autre port si nécessaire
+  },
   plugins: [react()],
-  base: '/portfolio/',
+  base: '/Portfolio/',
   resolve: {
     alias: {
       // eslint-disable-next-line no-undef

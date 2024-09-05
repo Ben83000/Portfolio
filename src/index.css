@@ -135,7 +135,7 @@
   color: transparent;
 }
 .banner .content .model {
-  background-image: url(src/assets/me/studying.png);
+  background-image: url(/images/studying.png);
   width: 100%;
   height: 75vh;
   position: absolute;
@@ -198,7 +198,6 @@
     bottom: 50px;
   }
   .banner .content .model {
-    background-image: url(src/assets/me/studying.png);
     width: 100%;
     height: 70vh;
     position: absolute;
@@ -227,7 +226,6 @@
     bottom: 200px;
   }
   .banner .content .model {
-    background-image: url(src/assets/me/studying.png);
     width: 100%;
     height: 50vh;
     position: absolute;

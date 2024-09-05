@@ -19,12 +19,12 @@ function About() {
             imageInView ? { scale: 1, opacity: 1 } : { opacity: 0, scale: 0 }
           }
           transition={{ duration: 1 }}
-          className="flex items-center justify-center relative col-span-1 max-md:row-start-2 max-md:h-2/3 w-fit mx-auto z-20"
+          className="flex items-center justify-center relative col-span-1 max-md:row-start-2 w-fit mx-auto z-20 max-md:h-2/3 my-auto"
         >
           <motion.img
             src={coding}
             alt=""
-            className="object-contain h-full w-full"
+            className="object-contain h-full"
           />
           <motion.img
             animate={{
