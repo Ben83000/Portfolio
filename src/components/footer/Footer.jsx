@@ -52,8 +52,8 @@ function Footer() {
             <FontAwesomeIcon size="2x" icon={faGithub} />
           </a>
           <a
-            href="/cv.pdf"
-            download="Mon_CV.pdf"
+            href="/CV.pdf"
+            download="CV.pdf"
             className="relative cursor-pointer"
           >
             <FontAwesomeIcon size="2x" icon={faFile} className="" />

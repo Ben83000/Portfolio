@@ -78,7 +78,7 @@ function MobileNav() {
             initial={{ scale: 0, transformOrigin: "top right" }}
             animate={{ scale: 1, transformOrigin: "top right" }}
             exit={{ scale: 0, transformOrigin: "top right" }}
-            className="w-full bg-purple-950/90 backdrop-blur-sm absolute left-0 h-[60vh] top-16 p-6 text-white flex flex-col items-center justify-evenly"
+            className="w-full bg-purple-950/70 backdrop-blur-sm absolute left-0 h-[60vh] top-16 p-6 text-white flex flex-col items-center justify-evenly"
           >
             {navElements.map((item, index) => (
               <Link
