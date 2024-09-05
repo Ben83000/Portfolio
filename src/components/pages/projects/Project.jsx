@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import Button from "../ui/button/Button";
-import Carousel from "../carousel/Carousel";
-import { ModalContext } from "../../contexts/modalContext";
+import Button from "@/components/ui/button/Button";
+import Carousel from "@/components/carousel/Carousel";
+import { ModalContext } from "@/contexts/modalContext";
+import { useLanguage } from "@/contexts/languageContext";
 
 function Project({
   name,
@@ -16,6 +17,7 @@ function Project({
   index,
 }) {
   const { openModal } = useContext(ModalContext);
+  const { language } = useLanguage();
 
   const handleScreenshots = (e) => {
     openModal(<Carousel project={name} />, e.clientX, e.clientY);
@@ -53,7 +55,9 @@ function Project({
 
       <div className="py-6 flex flex-col max-sm:gap-4">
         <div>
-          <p className="text-lg">{description}</p>
+          <p className="text-lg">
+            {language === "FR" ? description?.fr : description?.en}
+          </p>
           {front && <p className="text-lg">Front: {front}</p>}
           {back && <p className="text-lg">Back: {back}</p>}
           {technos && <p className="text-lg">Technos: {technos}</p>}

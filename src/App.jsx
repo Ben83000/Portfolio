@@ -1,13 +1,13 @@
 import ParticlesBackground from "./components/particles/ParticlesBackground";
 import Nav from "./components/nav/Nav";
 import MobileNav from "./components/mobileNav/MobileNav";
-import Home from "./components/home/Home";
-import About from "./components/about/About";
-import Projects from "./components/projects/Projects";
+import Home from "./components/pages/home/Home";
+import About from "./components/pages/about/About";
+import Projects from "./components/pages/projects/Projects";
 import { ModalContextProvider } from "./contexts/modalContext";
 import Modal from "./components/modal/Modal";
 import { ScreenContextProvider } from "./contexts/screenContext";
-import Skills from "./components/skills/Skills";
+import Skills from "./components/pages/skills/Skills";
 import Footer from "./components/footer/Footer";
 import Fun from "./components/fun/Fun";
 import { LanguageContextProvider } from "./contexts/languageContext";

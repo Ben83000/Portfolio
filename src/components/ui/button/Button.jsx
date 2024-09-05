@@ -13,8 +13,7 @@ function Button({ text, type, onClick, href }) {
           ? shadowAnimation
           : type === "fill"
             ? fillAnimation
-            : null
-      }
+            : null}
       initial="hidden"
       animate="visible"
       whileHover="hover"

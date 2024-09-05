@@ -9,8 +9,6 @@ export const LanguageContextProvider = ({ children }) => {
     setLanguage((prev) => prev === "FR" ? "EN" : "FR")
   }
 
-  console.log(language)
-
   return (
     <LanguageContext.Provider value={{ language, handleLanguage }}>
       {children}

@@ -39,7 +39,7 @@ function Toggle() {
         initial={{ x: 24 }}
         animate={controls}
         transition={{ duration: 0.2, ease: "easeInOut"}}
-        className="absolute text-fuchsia-500 font-semibold text-sm h-5 flex justify-center items-center w-5"
+        className="absolute text-fuchsia-600 font-semibold text-sm h-5 flex justify-center items-center w-5"
       >
         {language}
       </motion.p>

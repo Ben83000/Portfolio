@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Element } from "react-scroll";
+import { useLanguage } from "@/contexts/languageContext";
 
 function Skills() {
   const [images, setImages] = useState([]);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const importAllImages = async () => {
@@ -36,9 +38,18 @@ function Skills() {
           ))}
         </motion.div>
         <div className="content">
-          <h1 data-content="COMPÉTENCES" className="mx-auto">
-            COMPÉTENCES
-          </h1>
+          <AnimatePresence mode="popLayout">
+            <motion.h1
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              key={language}
+              data-content={language === "FR" ? "COMPÉTENCES" : "SKILLS"}
+              className="mx-auto"
+            >
+              {language === "FR" ? "COMPÉTENCES" : "SKILLS"}
+            </motion.h1>
+          </AnimatePresence>
           <motion.div
             animate={{
               y: [

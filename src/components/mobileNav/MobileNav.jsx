@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-scroll";
 import Toggle from "../ui/Toggle";
 import { useScroll } from "@/contexts/scrollContext";
+import { useLanguage } from "@/contexts/languageContext";
 
 function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
   const { isScrollingDown } = useScroll();
+  const { language } = useLanguage()
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -36,12 +38,12 @@ function MobileNav() {
             transition={{ duration: 0.4, ease: "easeInOut"}}
           >
             <motion.div
-              animate={{ y: [0, 10, -10, 0] }}
+              animate={{ y: [ 5, -5] }}
               transition={{
                 repeat: Infinity,
                 repeatType: "reverse",
                 ease: "easeInOut",
-                duration: 4,
+                duration: 1.5,
               }}
               className="fixed top-20 bg-fuchsia-400 rounded-full right-2"
             >
@@ -86,11 +88,10 @@ function MobileNav() {
                 duration={500}
                 offset={-150}
                 className="text-3xl flex gap-2"
-                key={item?.title}
-                href=""
+                key={item?.id + index}
               >
                 <FontAwesomeIcon className="" icon={item?.icon} />
-                <p>{item?.title}</p>
+                <p>{language === "FR" ? item?.title?.fr : item?.title?.en}</p>
               </Link>
             ))}
           </motion.div>

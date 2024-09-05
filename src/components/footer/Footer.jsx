@@ -48,7 +48,7 @@ function Footer() {
           <a href="https://www.linkedin.com/in/benjamin-boufflers-8bb688324/">
             <FontAwesomeIcon size="2x" icon={faLinkedin} />
           </a>
-          <a href="https://github.com/Benjaminboufflers/SugBreak">
+          <a href="https://github.com/Benjaminboufflers" target="_blank">
             <FontAwesomeIcon size="2x" icon={faGithub} />
           </a>
           <a
