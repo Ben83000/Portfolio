@@ -4,6 +4,7 @@ import { useScreenContext } from "../../contexts/screenContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFile } from "@fortawesome/free-solid-svg-icons";
+import CV from "/CV.pdf"
 
 function Footer() {
   const [images, setImages] = useState([]);
@@ -52,8 +53,8 @@ function Footer() {
             <FontAwesomeIcon size="2x" icon={faGithub} />
           </a>
           <a
-            href="/CV.pdf"
-            download="CV.pdf"
+            href={CV}
+            download={CV}
             className="relative cursor-pointer"
           >
             <FontAwesomeIcon size="2x" icon={faFile} className="" />
