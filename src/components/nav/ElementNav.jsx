@@ -24,6 +24,7 @@ const appearAnimation = {
   },
 };
 
+
 const ElementNav = React.forwardRef(
   ({ icon, title, id, setSelectedMenuItem, selectedMenuItem }, ref) => {
     const controls = useAnimationControls();
